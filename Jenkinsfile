@@ -25,6 +25,7 @@ pipeline {
       stage('build the image') {
         steps {
           sh '''
+            ls -ltra
             PASSWD=`echo -n "$DOCKER_CREDS_USR:$DOCKER_CREDS_PSW" | base64`
             JSON=`printf '{"auths": {"https://index.docker.io/v1/": {"auth": "%s"}}}' "$PASSWD"`
             echo "$JSON" > /kaniko/.docker/config.json
