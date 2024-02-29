@@ -1,5 +1,5 @@
 FROM quay.io/jupyter/all-spark-notebook:latest
 
-ADD ./requirements.txt /requirements.txt
+ADD ./requirements.txt /tmp/requirements.txt
 
-RUN pip install -r /requirements.txt
+RUN pip install -r /tmp/requirements.txt
